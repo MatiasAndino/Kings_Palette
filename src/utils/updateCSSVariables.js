@@ -20,3 +20,9 @@ export function setRootVariables(colors) {
 
     setCSSVariables(colorVars);
 }
+
+export function setRootVariable(attribute, color) {
+    const value = {};
+    value[attribute] = color;
+    setCSSVariables(value);
+}
