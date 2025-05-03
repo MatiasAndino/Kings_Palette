@@ -1,0 +1,23 @@
+.border {
+    width: 90%;
+    background: var(--background-color);
+    border: 3px dashed var(--color-frame);
+    border-left: 1px solid var(--color-frame);
+    border-right: 1px solid var(--color-frame);
+    text-align: center;
+    margin: auto;
+  }
+  .border::before {
+    display: inherit;
+    content: ' ';
+    padding: 2px;
+    border-top: 6px solid var(--color-frame);
+    border-bottom: 8px double var(--color-frame);
+  }
+  .border::after {
+    display: inherit;
+    content: ' ';
+    padding: 2px;
+    border-bottom: 6px solid var(--color-frame);
+    border-top: 8px double var(--color-frame);
+  }

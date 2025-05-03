@@ -1,0 +1,35 @@
+.button {
+    border-style: none;
+    color: var(--background-color-section-1);
+    background-color: var(--color-button);
+    font-size: calc(8px + 1vw);
+    font-weight: 700;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0 7px 0px var(--background-color);
+    
+    width: 100%;
+    min-height: 50px;
+    height: 100%;
+    max-height: 60px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+
+    transition: .25s ease-in-out;
+}
+
+.button:hover {
+    background-color: var(--color-button-hover);
+}
+
+.button:active {
+    background-color: var(--background-color);
+    color: var(--color-button);
+    outline: 1px solid var(--color-button);
+    fill: var(--color-button);
+    box-shadow: 0 5px 0px var(--background-color);
+    transform: translateY(3px);
+}

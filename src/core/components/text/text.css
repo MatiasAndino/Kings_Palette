@@ -1,0 +1,5 @@
+.text {
+    font-size: calc(8px + .75vw);
+    font-weight: 500;
+    color: var(--color-text);
+}

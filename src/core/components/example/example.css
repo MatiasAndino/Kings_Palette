@@ -1,0 +1,42 @@
+.example-container {
+    width: 60vw;
+    height: 75vh;
+    margin: 3vw auto;
+    position: relative;
+    background-color: var(--background-color);
+    border-radius: 10px;
+}
+
+.example-container .nav {
+    width: 100%;
+    height: 6vw;
+    min-height: 60px;
+}
+
+.example-container .center {
+    width: 100%;
+    display: flex;
+    margin: 2vw 0;
+}
+
+.example-container .center .left {
+    display: flex;
+    justify-content: center;
+}
+
+.example-container .center .left img {
+    height: auto;
+    width: 50%;
+}
+
+.example-container .center .right {
+    margin: auto 2vw;
+}
+
+.example-container .buttons {
+    width: 50%;
+    height: 60px;
+    display: flex;
+    margin: 2vw auto;
+    gap: 2vw;
+}
