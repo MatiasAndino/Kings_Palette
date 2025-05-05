@@ -22,7 +22,7 @@ export function evaluateTonalScale([h, s, l]) {
 
 }
 
-export function getDarkerColor([h, ,]) {
+export function getDarkerPalette([h, ,]) {
     return getShades([h, 10, 14]);
 }
 

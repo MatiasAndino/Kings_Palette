@@ -1,0 +1,7 @@
+.palettes {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1vw;
+    margin-top: .5vw;
+}

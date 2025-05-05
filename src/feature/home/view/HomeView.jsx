@@ -1,108 +1,40 @@
 import { useState } from 'react';
 import './homeview.css';
 
-import {
-    evaluateTonalScale,
-    formatHSLString,
-    getAnalogousHarmony, getAnalogousPalette, getComplementaryHSL, getDarkerColor, getRandomHexColor, getReadableForegroundColor, getShades,
-    getSmoothedAnalogous, getTriadHSL, getTriadHSLFirstColor, getTriadHSLSecondColor,
-    hexToHSL, hslToHex
-} from '../../../utils';
-import LoginForm from '../../../core/components/form/login-form/LoginForm';
-import ColorBlock from '../../../core/components/color-block/ColorBlock';
+import { hexToHSL } from '../../../utils';
+import Palettes from '../../../core/components/palettes/Palettes';
+import SideBar from '../../../core/components/side-bar/SideBar';
+import Palette from '../../../core/components/palette/Palette';
+import { usePalette } from '../../../core/palette-context/PaletteContext';
 
 const HomeView = () => {
 
-    const [inputColor, setInputColor] = useState('#0099ff');
-    const COLOR = hexToHSL(inputColor);
+    const COLOR = hexToHSL('#E9C42F');
     const [colorHSL, setColorHSL] = useState(COLOR);
+    const { palette } = usePalette();
 
-    function onChange(e) {
-        e.target.default;
-
-        const input = e.target.value;
-
-        const isValid = /^#?[0-9A-Fa-f]*$/.test(input);
-
-        if (isValid) {
-            setColorHSL(hexToHSL(input));
-        }
-
-        setInputColor(input);
+    function setColor(color) {
+        setColorHSL(color)
     }
-
-    function setColors(func) {
-        const colors = func(colorHSL);
-
-        return colors.map(color => <ColorBlock color={color} key={crypto.randomUUID()} />);
-    }
-
-    function handleClick() {
-        const randomColor = getRandomHexColor();
-
-        setInputColor(hslToHex(randomColor));
-        setColorHSL(randomColor);
-    }
-
-
 
     return (
-        <>
-            <div className='container'>
-                <div className="elements">
-                    <div className="left-side">
-                        <div className="palette">
-                            {setColors(getShades).map(item => item)}
-                        </div>
-                        <div className="palette">
-                            {setColors(getTriadHSLFirstColor).map(item => item)}
-                        </div>
-                        <div className="palette">
-                            {setColors(getTriadHSLSecondColor).map(item => item)}
-                        </div>
-                        <div className="palette">
-                            {setColors(getComplementaryHSL).map(item => item)}
-                        </div>
-                    </div>
-                    <div className="middle-side">
-                        <div className="palette">
-                            {setColors(getAnalogousPalette).map(item => item)}
-                        </div>
-                        <div className="palette">
-                            {setColors(getAnalogousHarmony).map(item => item)}
-                        </div>
-                        <div className="palette">
-                            {setColors(getSmoothedAnalogous).map(item => item)}
-                        </div>
-                        <div className="palette">
-                            {setColors(getDarkerColor).map(item => item)}
-                        </div>
-                    </div>
-                    <div className="right-side">
-
-                        <label htmlFor='input-color'>Color: </label>
-                        <input
-                            type='text'
-                            id='input-color'
-                            name='input-color'
-                            value={inputColor}
-                            className='input-color'
-                            // style={{ 'backgroundColor': inputColor }}
-                            onChange={e => onChange(e)}
-                            required
-                        />
-
-                        <button onClick={handleClick}>GENERATE RANDOM</button>
-                        <div className="palette highlighted-border-1" id='current-color'>
-                            {setColors((color) => [color]).map(item => item)}
-                        </div>
-                    </div>
-                </div>
-
+        <div className="container">
+            <div className="header">HEADER</div>
+            <div className="side-bar">
+                <SideBar fn={setColor} />
             </div>
+            <div className="main-content">
+                <section>
+                    <Palettes color={colorHSL} />
+                </section>
+                <section>
+                    {/* <Palette title='CUSTOM' palette={[[0, 0, 0], [0, 100, 100], [0, 0, 0], [0, 100, 100], [0, 0, 0], [0, 100, 100],]} isCustom={'perro'} /> */}
+                    <Palette title='CUSTOM' palette={palette} isCustom={true} />
+                </section>
+            </div>
+            <div className="footer">FOOTER</div>
+        </div>
 
-            {/* <LoginForm /> */}
-        </>
     )
 }
 

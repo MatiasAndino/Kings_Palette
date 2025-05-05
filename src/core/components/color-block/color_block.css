@@ -1,46 +1,65 @@
 .block-color {
-    outline: 1px solid #333;
-    max-width: 100px;
-    width: 6vw;
-    min-width: 60px;
-    max-height: 100px;
-    height: 6vw;
-    min-height: 60px;
+  max-width: 100px;
+  width: 6vw;
+  min-width: 60px;
+  max-height: 100px;
+  height: 6vw;
+  min-height: 60px;
 
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    position: relative;
+  position: relative;
 }
 
 .block-color>p {
-    font-weight: 600;
-    font-size: clamp(12px, 1vw, 15px);
-    text-align: center;
+  font-weight: 600;
+  font-size: clamp(12px, 1vw, 16px);
+  text-align: center;
 }
 
 .block-color .icon {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 15%;
-    height: auto;
-    padding: 5px;
-    cursor: pointer;
+  position: absolute;
+  /* bottom: 0;
+  right: 0; */
+  width: 15%;
+  height: 25%;
+  padding: 0px 5px;
+  cursor: pointer;
+
+  visibility: hidden;
+  /* outline: 1px solid orange; */
+  display: flex;
+  align-items: center;
+}
+
+.block-color:hover .icon {
+  visibility: visible;
+}
+
+.block-color .icon.copy-icon {
+  top: 1%;
+  right: 1%;
+}
+
+.block-color .icon.add-icon {
+  top: 1%;
+  right:27%;
+  /* top: 0;
+  left: 0; */
 }
 
 .block-color .icon path {
-    fill: var(--button-color);
+  fill: var(--button-color);
 }
 
 .block-color .icon:hover {
-    --button-color: #D95F59;
+  --button-color: #D95F59;
 }
 
 .block-color .icon:active {
-    --button-color: #D4FB56;
+  --button-color: #D4FB56;
 }
 
 .tooltip {
@@ -90,4 +109,3 @@
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
-

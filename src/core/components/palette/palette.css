@@ -1,0 +1,9 @@
+.palette-container > span {
+    font-size: clamp(10px, 1vw, 12px);
+    font-weight: 700;
+}
+
+.palette-container .palette {
+    display: flex;
+    gap: 2px;
+}

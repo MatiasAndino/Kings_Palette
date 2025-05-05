@@ -1,9 +1,12 @@
+import { PaletteProvider } from "./core/palette-context/PaletteContext"
 import HomeView from "./feature/home/view/HomeView"
 
 function App() {
 
   return (
-    <HomeView />
+    <PaletteProvider>
+      <HomeView />
+    </PaletteProvider>
   )
 }
 
