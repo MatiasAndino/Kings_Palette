@@ -5,6 +5,7 @@ import { getShades } from "./shadesGenerator";
 export const PALETTE_SIZE = 5;
 export const MAX_RANGE_ANALOGOUS_COLORS = 30;
 export const normalizeHue = hue => (hue + 360) % 360;
+export const DEFAULT_COLOR = [60,100,50];
 const TARGET_TONAL_VALUE = 65;
 const TONE_TOLERANCE = 10;
 
@@ -19,21 +20,16 @@ export function evaluateTonalScale([h, s, l]) {
         const corrected = [h, s, TARGET_TONAL_VALUE + off];
         return corrected;
     }
-
 }
 
 export function getDarkerPalette([h, ,]) {
     return getShades([h, 10, 14]);
 }
 
-export function getRandomHexColor() {
+export function getRandomColor() {
     const randomColor = Math.floor(Math.random() * 16777215);
 
     return evaluateTonalScale(hexToHSL(`#${randomColor.toString(16).padStart(6, '0')}`));
-}
-
-export function evaluateSaturationLevel([h, s, l]) {
-
 }
 
 export function formatHSLString([h, s, l]) {

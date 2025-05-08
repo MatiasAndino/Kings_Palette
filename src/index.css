@@ -12,6 +12,17 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --main-color: #605839;
+  --second-color: #D95F59;
+
+  --color1: hsl(0,0,0);
+  --color2: hsl(0,0,0);
+  --color3: hsl(0,0,0);
+  --color4: hsl(0,0,0);
+  --color5: hsl(0,0,0);
+  --color6: hsl(0,0,0);
+
+
   --background-color: var(--color1);
   --background-color-section-0: var(--color4);
   --background-color-navbar: var(--color5);

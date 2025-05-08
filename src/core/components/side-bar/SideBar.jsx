@@ -1,52 +1,30 @@
-import { useState } from 'react';
 import './side_bar.css'
-import { getRandomHexColor, hexToHSL, hslToHex } from '../../../utils';
 import ColorBlock from '../color-block/ColorBlock';
+import ToggleSwitch from '../toggle-switch/ToggleSwitch';
+import InputColor from '../input-color/InputColor';
+import RandomButton from '../random-button/RandomButton';
+import { useRef } from 'react';
+import image from '../../../assets/logo.jpg';
 
-const SideBar = ({ fn }) => {
 
-    const [inputColor, setInputColor] = useState('#E9C42F');
-
-    function onChange(e) {
-        e.target.default;
-
-        const input = e.target.value;
-
-        const isValid = /^#?[0-9A-Fa-f]*$/.test(input);
-
-        if (isValid) {
-            fn(hexToHSL(input));
-        }
-
-        setInputColor(input);
-    }
-
-    function handleClick() {
-        const randomColor = getRandomHexColor();
-
-        setInputColor(hslToHex(randomColor));
-        fn(randomColor);
-    }
+const SideBar = () => {
+    const inputRef = useRef();
 
     return (
         <div className="side-bar-container">
+            <div className="logo">
+                <img src={image} alt="logo" className="img-logo" />
+            </div>
 
-            <label htmlFor='input-color'>COLOR: </label>
-            <input
-                type='text'
-                id='input-color'
-                name='input-color'
-                value={inputColor}
-                className='input-color'
-                onChange={e => onChange(e)}
-                required
-            />
+            <InputColor inputRef={inputRef} />
 
-            <button onClick={handleClick}>GENERATE RANDOM</button>
+            <RandomButton inputRef={inputRef} />
 
             <div className="color-block">
-                <ColorBlock color={hexToHSL(inputColor)} />
+                <ColorBlock />
             </div>
+
+            <ToggleSwitch />
         </div>
     )
 }

@@ -1,10 +1,13 @@
 import { createContext, useContext, useState } from "react";
+import { setRootVariables } from "../../utils";
+import { DEFAULT_COLOR } from "../../utils/colorUtils";
 
 const PaletteContext = createContext();
 
 export function PaletteProvider({ children }) {
   const [palette, setPalette] = useState([]);
-  const [autoPalette, setAutoPalette] = useState([]);
+  const [switchState, setSwitchState] = useState(true);
+  const [currentColor, setCurrentColor] = useState(DEFAULT_COLOR)
 
   const includesColor = (color) => {
     const [h, s, l] = color;
@@ -17,23 +20,51 @@ export function PaletteProvider({ children }) {
     return false;
   }
 
+  const updateCurrentColor = (color) => {
+    setCurrentColor(color);
+  }
+
+  const updateCSSVariables = (currentPalette) => {
+    setRootVariables(currentPalette)
+  }
+
   const addColor = (color) => {
     setPalette(prev => [...prev, color]);
+    updateCSSVariables([...palette, color]);
   };
 
   const removeColor = (color) => {
-    const [h,s,l] = color;
+    const [h, s, l] = color;
+    const currentPalette = palette.filter(([hh, ss, ll]) => !(h == hh && s == ss && l == ll));
 
-    setPalette(prev => prev.filter(([hh,ss,ll]) => !(h == hh && s == ss && l == ll)));
+    setPalette(currentPalette);
+
+    updateCSSVariables(currentPalette);
   };
 
   const clearPalette = () => setPalette([]);
 
-  const generateAutoPalette = (allPalettes) => {
+  const changeState = () => {
+    setSwitchState(!switchState);
+    updateAutoPalette(palette)
+  }
+
+  const updateAutoPalette = (palette) => {
+    if (switchState) updateCSSVariables(palette);
   };
 
   return (
-    <PaletteContext.Provider value={{ palette, includesColor, addColor, removeColor, clearPalette, generateAutoPalette }}>
+    <PaletteContext.Provider value={{
+      palette,
+      currentColor,
+      updateCurrentColor,
+      includesColor,
+      addColor,
+      removeColor,
+      clearPalette,
+      updateAutoPalette,
+      changeState
+    }}>
       {children}
     </PaletteContext.Provider>
   );

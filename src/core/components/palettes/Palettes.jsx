@@ -1,22 +1,65 @@
 import './palettes.css'
 import Palette from '../palette/Palette'
 import {
-    getAnalogousHarmony, getAnalogousPalette, getComplementaryHSL,
-    getDarkerPalette, getPalette, getShades,
+    getAnalogousHarmony, getAnalogousPalette, getComplementaryHSL, getDarkerPalette, getShades,
     getSmoothedAnalogous, getTriadHSLFirstColor, getTriadHSLSecondColor
 } from '../../../utils'
+import { usePalette } from '../../palette-context/PaletteContext';
 
-const Palettes = ({ color }) => {
+const Palettes = () => {
+    const { palette, currentColor, updateAutoPalette } = usePalette();
+
+    const SHADES = getShades(currentColor);
+    const COMPLEMENTARY = getComplementaryHSL(currentColor);
+    const TRIAD_COLOR_1 = getTriadHSLFirstColor(currentColor);
+    const TRIAD_COLOR_2 = getTriadHSLSecondColor(currentColor);
+    const DARKER = getDarkerPalette(currentColor);
+    const ANALOGOUS = getAnalogousPalette(currentColor);
+    const ANALOGOUS_HARMONY = getAnalogousHarmony(currentColor);
+    const SMOOTHED_ANALOGOUS = getSmoothedAnalogous(currentColor);
+    const RECOMMENDED = [
+        DARKER[2],
+        SHADES[0],
+        ANALOGOUS_HARMONY[0],
+        DARKER[0],
+        TRIAD_COLOR_1[3],
+    ]
+    // const RECOMMENDED = [[
+    //     DARKER[2],
+    //     SHADES[0],
+    //     ANALOGOUS_HARMONY[0],
+    //     DARKER[0],
+    //     TRIAD_COLOR_1[3],
+    // ], [
+    //     SHADES[0],
+    //     DARKER[2],
+    //     TRIAD_COLOR_1[3],
+    //     DARKER[0],
+    //     ANALOGOUS_HARMONY[0],
+    // ]]
+
+    // const randomRecommendedPalette = RECOMMENDED[Math.floor(Math.random() * RECOMMENDED.length)]
+
+    const palettes = {
+        'SHADES': SHADES,
+        'COMPLEMENTARY': COMPLEMENTARY,
+        'TRIAD_COLOR_1': TRIAD_COLOR_1,
+        'TRIAD_COLOR_2': TRIAD_COLOR_2,
+        'DARKER': DARKER,
+        'ANALOGOUS': ANALOGOUS,
+        'ANALOGOUS_HARMONY': ANALOGOUS_HARMONY,
+        'SMOOTHED_ANALOGOUS': SMOOTHED_ANALOGOUS,
+        'RECOMMENDED': RECOMMENDED,
+        'CUSTOM': palette,
+    }
+    updateAutoPalette(RECOMMENDED);
+
+
     return (
         <div className="palettes">
-            <Palette title='SHADES' palette={getPalette(getShades, color)} />
-            <Palette title='COMPLEMENTARY' palette={getPalette(getComplementaryHSL, color)} />
-            <Palette title='TRIAD COLOR 1' palette={getPalette(getTriadHSLFirstColor, color)} />
-            <Palette title='TRIAD COLOR 2' palette={getPalette(getTriadHSLSecondColor, color)} />
-            <Palette title='DARKER' palette={getPalette(getDarkerPalette, color)} />
-            <Palette title='ANALOGOUS' palette={getPalette(getAnalogousPalette, color)} />
-            <Palette title='ANALOGOUS HARMONY' palette={getPalette(getAnalogousHarmony, color)} />
-            <Palette title='SMOOTHED ANALOGOUS' palette={getPalette(getSmoothedAnalogous, color)} />
+            {
+                Object.keys(palettes).map(key => <Palette title={key.replaceAll('_', ' ')} palette={palettes[key]} key={crypto.randomUUID()} />)
+            }
         </div>
     )
 }

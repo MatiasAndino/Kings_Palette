@@ -1,7 +1,7 @@
 export { getPalette } from "./generatePalette.js";
 export { hslToRgb } from "./convertHSLToRGB.js";
 export { getComplementaryHSL } from "./colorComplementGenerator";
-export { evaluateTonalScale, getDarkerPalette, getRandomHexColor, getReadableForegroundColor, formatHSLString } from "./colorUtils";
+export { evaluateTonalScale, getDarkerPalette, getRandomColor, getReadableForegroundColor, formatHSLString } from "./colorUtils";
 export { hexToHSL } from "./convertHexToHSL";
 export { hslToHex } from "./convertHSLToHex";
 export { getShades } from "./shadesGenerator.js";

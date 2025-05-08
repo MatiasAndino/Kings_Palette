@@ -1,0 +1,24 @@
+
+.header-container {
+    margin: 0 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+}
+
+.header-container .logo {
+    width: 6VW;
+    height: 6VW;
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header-container .title {
+    font-size: 3.5vw;
+    color: #D99A36;
+    text-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+    /* color: #D18C47; */
+}

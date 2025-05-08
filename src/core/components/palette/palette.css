@@ -1,5 +1,5 @@
 .palette-container > span {
-    font-size: clamp(10px, 1vw, 12px);
+    font-size: clamp(10px, 1vw, 14px);
     font-weight: 700;
 }
 

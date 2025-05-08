@@ -8,17 +8,23 @@ function setCSSVariables(vars) {
 }
 
 export function setRootVariables(colors) {
-    const colorVars = colors.reduce((result, color, i) => {
+
+    const maxQuantity = 6;
+
+    const vars = [...new Array(maxQuantity)].reduce((result, _, index) => {
+        let color = [0, 0, 15];
+
+        if (colors[index] != undefined) color = [...colors[index]];
 
         const [h, s, l] = color;
-        const backgroundColor = `HSL(${h},${s}%,${l}%)`;
+        const hsl = `HSL(${h},${s}%,${l}%)`;
 
-        result[`color${i + 1}`] = backgroundColor;
+        result[`color${index + 1}`] = hsl;
 
         return result;
     }, {});
 
-    setCSSVariables(colorVars);
+    setCSSVariables(vars);
 }
 
 export function setRootVariable(attribute, color) {

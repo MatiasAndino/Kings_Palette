@@ -1,38 +1,28 @@
-import { useState } from 'react';
 import './homeview.css';
-
-import { hexToHSL } from '../../../utils';
-import Palettes from '../../../core/components/palettes/Palettes';
 import SideBar from '../../../core/components/side-bar/SideBar';
-import Palette from '../../../core/components/palette/Palette';
-import { usePalette } from '../../../core/palette-context/PaletteContext';
+import PreviewGroup from '../../../core/components/preview-group/PreviewGroup';
+import Header from '../../../core/components/header/Header';
+import Palettes from '../../../core/components/palettes/Palettes';
 
 const HomeView = () => {
 
-    const COLOR = hexToHSL('#E9C42F');
-    const [colorHSL, setColorHSL] = useState(COLOR);
-    const { palette } = usePalette();
-
-    function setColor(color) {
-        setColorHSL(color)
-    }
-
     return (
         <div className="container">
-            <div className="header">HEADER</div>
+            <div className="header">
+                <Header />
+            </div>
             <div className="side-bar">
-                <SideBar fn={setColor} />
+                <SideBar />
             </div>
             <div className="main-content">
                 <section>
-                    <Palettes color={colorHSL} />
+                    <Palettes />
                 </section>
                 <section>
-                    {/* <Palette title='CUSTOM' palette={[[0, 0, 0], [0, 100, 100], [0, 0, 0], [0, 100, 100], [0, 0, 0], [0, 100, 100],]} isCustom={'perro'} /> */}
-                    <Palette title='CUSTOM' palette={palette} isCustom={true} />
+                    <PreviewGroup />
                 </section>
             </div>
-            <div className="footer">FOOTER</div>
+            <div className="footer"></div>
         </div>
 
     )

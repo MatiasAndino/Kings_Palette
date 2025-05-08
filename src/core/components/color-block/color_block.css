@@ -8,7 +8,7 @@
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: end;
 
   position: relative;
 }
@@ -45,21 +45,22 @@
 
 .block-color .icon.add-icon {
   top: 1%;
-  right:27%;
+  right: 27%;
   /* top: 0;
   left: 0; */
 }
 
 .block-color .icon path {
   fill: var(--button-color);
+  stroke: var(--button-color);
 }
 
 .block-color .icon:hover {
-  --button-color: #D95F59;
+  --button-color: var(--second-color);
 }
 
 .block-color .icon:active {
-  --button-color: #D4FB56;
+  --button-color: #111;
 }
 
 .tooltip {

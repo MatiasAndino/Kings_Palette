@@ -1,0 +1,25 @@
+import { usePalette } from '../../palette-context/PaletteContext';
+import './toggle_switch.css';
+
+const ToggleSwitch = () => {
+
+    const { changeState } = usePalette();
+
+    function handleClick() {
+        changeState();
+    }
+
+    return (
+        <label className="toggle">
+            <input type="checkbox" onClick={handleClick} />
+            <span className="slider">
+                <span className="label-text"></span>
+                <span className="circle"></span>
+            </span>
+        </label>
+
+
+    )
+}
+
+export default ToggleSwitch

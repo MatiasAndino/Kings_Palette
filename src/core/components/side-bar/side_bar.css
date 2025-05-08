@@ -6,6 +6,20 @@
     position: fixed;
 }
 
+.side-bar-container .logo {
+    min-height: 100px;
+    margin: auto;
+}
+
+.side-bar-container .logo .img-logo {
+    /* width: 6VW;
+    height: 6VW; */
+    max-width: 75px;
+    max-height: 75px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
 .side-bar-container > label{
     font-size: 18px;
     font-weight: 600;
@@ -17,11 +31,11 @@
     font-weight: 600;
     border-radius: 5px;
     border: none;
-    outline: 2px solid #605839;
+    outline: 2px solid var(--main-color);
 }
 
 .side-bar-container > input:focus{
-    outline: 2px solid #D19347;
+    outline: 2px solid greenyellow;
 }
 
 .side-bar-container > button{
@@ -30,7 +44,7 @@
     margin-top: 10px;
     border-style: none;
     color: #DDD;
-    background-color: #605839;
+    background-color: var(--main-color);
     font-size: clamp(13px, 1vw, 16px);
     font-weight: 600;
     border-radius: 5px;
@@ -42,7 +56,7 @@
 }
 
 .side-bar-container > button:hover {
-    background-color: #D95F59;
+    background-color: var(--second-color);
 }
 
 .side-bar-container > button:active {

@@ -4,6 +4,7 @@ import './palette.css';
 
 const Palette = ({ title, palette }) => {
   const maxQuantity = 5;
+
   return (
     <div className='palette-container'>
       <span>{title}</span>
