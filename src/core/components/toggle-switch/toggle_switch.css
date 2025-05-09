@@ -27,12 +27,12 @@
 
 .slider .label-text {
   z-index: 1;
-  padding-left: 5px;
+  padding-left: 25px;
   transition: all 0.3s ease;
 }
 
 .slider .label-text::before {
-  content: 'RECOMMENDED';
+  content: 'SUGGESTED';
 }
 
 .circle {
@@ -58,7 +58,7 @@
 }
 
 .toggle input:checked + .slider .label-text {
-  transform: translateX(70px);
+  transform: translateX(50px);
 }
 
 .toggle input:checked + .slider .label-text::before {

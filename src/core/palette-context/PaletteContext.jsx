@@ -1,13 +1,11 @@
 import { createContext, useContext, useState } from "react";
 import { setRootVariables } from "../../utils";
-import { DEFAULT_COLOR } from "../../utils/colorUtils";
 
 const PaletteContext = createContext();
 
 export function PaletteProvider({ children }) {
   const [palette, setPalette] = useState([]);
   const [switchState, setSwitchState] = useState(true);
-  const [currentColor, setCurrentColor] = useState(DEFAULT_COLOR)
 
   const includesColor = (color) => {
     const [h, s, l] = color;
@@ -18,10 +16,6 @@ export function PaletteProvider({ children }) {
     }
 
     return false;
-  }
-
-  const updateCurrentColor = (color) => {
-    setCurrentColor(color);
   }
 
   const updateCSSVariables = (currentPalette) => {
@@ -44,7 +38,7 @@ export function PaletteProvider({ children }) {
 
   const clearPalette = () => setPalette([]);
 
-  const changeState = () => {
+  const switchPalettes = () => {
     setSwitchState(!switchState);
     updateAutoPalette(palette)
   }
@@ -56,14 +50,12 @@ export function PaletteProvider({ children }) {
   return (
     <PaletteContext.Provider value={{
       palette,
-      currentColor,
-      updateCurrentColor,
       includesColor,
       addColor,
       removeColor,
       clearPalette,
       updateAutoPalette,
-      changeState
+      switchPalettes
     }}>
       {children}
     </PaletteContext.Provider>

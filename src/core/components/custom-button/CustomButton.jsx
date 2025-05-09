@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
 import { usePalette } from '../../palette-context/PaletteContext';
 
 const CustomButton = ({ color }) => {
     const { includesColor, addColor, removeColor, palette } = usePalette();
-    const [isSelected, setIsSelected] = useState(includesColor(color));
 
+    const ADD = 'ADD TO CUSTOM PALETTE';
+    const REMOVE = 'REMOVE FROM CUSTOM PALETTE';
 
     const addIcon = (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" >
@@ -19,25 +19,26 @@ const CustomButton = ({ color }) => {
         </svg>
     )
 
+    const selected = () => {
+        return includesColor(color);
+    }
 
     function handleClick() {
-        if (palette.length >= 5 && !isSelected) return
+        if (palette.length >= 5 && !selected()) return
 
-        if (isSelected) removeColor(color);
+        if (selected()) removeColor(color);
         else addColor(color);
-
-        setIsSelected(prev => !prev);
     }
 
     return (
         <div
             className='tooltip fade icon add-icon'
             onClick={handleClick}
-            data-title={isSelected ? 'REMOVE FROM CUSTOM PALETTE' : 'ADD TO CUSTOM PALETTE'}
+            data-title={selected() ? REMOVE : ADD}
             role="button"
         >
             {
-                isSelected
+                selected()
                     ? removeIcon
                     : addIcon
             }

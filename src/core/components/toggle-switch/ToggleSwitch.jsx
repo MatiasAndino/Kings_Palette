@@ -3,10 +3,10 @@ import './toggle_switch.css';
 
 const ToggleSwitch = () => {
 
-    const { changeState } = usePalette();
+    const { switchPalettes } = usePalette();
 
     function handleClick() {
-        changeState();
+        switchPalettes();
     }
 
     return (

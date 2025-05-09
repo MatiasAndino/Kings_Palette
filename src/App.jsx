@@ -4,9 +4,9 @@ import HomeView from "./feature/home/view/HomeView"
 function App() {
 
   return (
-    <PaletteProvider>
-      <HomeView />
-    </PaletteProvider>
+
+    <HomeView />
+
   )
 }
 

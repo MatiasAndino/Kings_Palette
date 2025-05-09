@@ -1,14 +1,11 @@
 import { formatHSLString, getReadableForegroundColor, hslToHex } from '../../../utils';
-import { usePalette } from '../../palette-context/PaletteContext';
 import CustomButton from '../custom-button/CustomButton';
 import './color_block.css';
 
 const ColorBlock = ({ color }) => {
-    const { currentColor } = usePalette();
-    let selectedColor = color === undefined ? currentColor : color;
 
-    const specialColor = formatHSLString(getReadableForegroundColor(selectedColor));
-    const hexColor = hslToHex(selectedColor);
+    const specialColor = formatHSLString(getReadableForegroundColor(color));
+    const hexColor = hslToHex(color);
 
     const copyIcon = (
         <svg viewBox="0 0 448 512">
@@ -18,7 +15,7 @@ const ColorBlock = ({ color }) => {
 
     const blockStyle = {
         'color': specialColor,
-        'backgroundColor': formatHSLString(selectedColor),
+        'backgroundColor': formatHSLString(color),
         '--button-color': specialColor,
     };
 
@@ -40,7 +37,7 @@ const ColorBlock = ({ color }) => {
             >
                 {copyIcon}
             </div>
-            <CustomButton color={selectedColor} />
+            <CustomButton color={color} />
         </div>
     )
 }
