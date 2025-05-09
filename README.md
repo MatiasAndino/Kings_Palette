@@ -1,13 +1,20 @@
-# King's Palette 👑🎨
+<p align="center">
+<img src="https://github.com/user-attachments/assets/d294a3d1-60b0-4741-87c4-28370637c03c" alt="logo de king's pallete" width="300" />
+</p>
+<p align="center">
+
+# <img src="https://github.com/user-attachments/assets/e9720319-0257-4f72-bbfc-adecffd0492b" alt="logo de king's pallete" width="50" /> King's Palette
+</p>
+
 
 King's Palette es una herramienta intuitiva y dinámica para generar **combinaciones de colores atractivas** en segundos. Ideal para diseñadores, desarrolladores o cualquier persona que necesite inspiración visual, permite obtener paletas de colores **a partir de un color específico o de forma completamente aleatoria**.
 
 El objetivo principal de este proyecto es facilitar la exploración de armonías cromáticas útiles, sin necesidad de conocimientos técnicos avanzados sobre teoría del color. Ya sea para una interfaz, una ilustración o una presentación, King's Palette busca combinar la **simplicidad con el impacto visual.**
 
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/c368a42c-c861-4ad1-833c-2a906b521bd6" alt="imagen de la aplicacion numero 1" width="600"/>
-    <img src="https://github.com/user-attachments/assets/83496926-5a8a-42f6-be41-885a0064fd66" alt="imagen de la aplicacion numero 2" width="600"/>
-    <img src="https://github.com/user-attachments/assets/68ba9523-a1b5-457f-8d77-f4b9e7ac375a" alt="imagen de la aplicacion numero 3" width="600"/>
+    <img src="https://github.com/user-attachments/assets/c368a42c-c861-4ad1-833c-2a906b521bd6" alt="imagen de la aplicacion numero 1" width="1024"/>
+    <img src="https://github.com/user-attachments/assets/83496926-5a8a-42f6-be41-885a0064fd66" alt="imagen de la aplicacion numero 2" width="1024"/>
+    <img src="https://github.com/user-attachments/assets/68ba9523-a1b5-457f-8d77-f4b9e7ac375a" alt="imagen de la aplicacion numero 3" width="1024"/>
 </p>
 
 ---
@@ -24,10 +31,21 @@ El objetivo principal de este proyecto es facilitar la exploración de armonías
 
 ## 🛠️ Tecnologías utilizadas
 
+<table>
+  <tr>
+    <td width="60%">
+        
 - [Vite](https://vitejs.dev/)
+        
 - HTML / CSS / JavaScript
 - [React](https://react.dev/)
-  - Lógica compartida con `Context API`
+- Lógica compartida con `Context API`
+    </td>
+    <td>
+      <img src="https://github.com/user-attachments/assets/2e7b5757-3077-41b0-a6b0-8595917f83ae" width="300" alt="herramientas utilizadas"/>
+    </td>
+  </tr>
+</table>
 
 ---
 
