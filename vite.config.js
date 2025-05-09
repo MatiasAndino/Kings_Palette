@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Kings_Palette/',
+  base: 'https://matiasandino.github.io/Kings_Palette/',
 })
