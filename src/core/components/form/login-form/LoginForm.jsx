@@ -27,9 +27,15 @@ export default function LoginForm() {
         <button>Sign In</button>
 
         <div className="login-footer">
-          <a href="#NONE">Forgot password?</a>
+          <span role="link" aria-disabled="true">
+            Forgot password?
+          </span>
+          {/* <a href="#NONE">Forgot password?</a> */}
           <span>•</span>
-          <a href="#NONE">Create account</a>
+          <span role="link" aria-disabled="true">
+          Create account
+          </span>
+          {/* <a href="#NONE">Create account</a> */}
         </div>
       </form>
     </div>

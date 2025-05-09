@@ -90,14 +90,15 @@
     gap: 0.5rem;
   }
   
-  .login-footer a {
+  .login-footer span {
     color: var(--color3);
     font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
+    cursor: pointer;
   }
 
-  .login-footer a:hover {
+  .login-footer span:hover {
     color: var(--color5);
     text-decoration: none;
   }
