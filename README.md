@@ -3,13 +3,15 @@
 </p>
 <p align="center">
 
-# <img src="https://github.com/user-attachments/assets/e9720319-0257-4f72-bbfc-adecffd0492b" alt="logo de king's pallete" width="50" /> King's Palette
+# <img src="https://github.com/user-attachments/assets/e9720319-0257-4f72-bbfc-adecffd0492b" alt="logo de king's pallete" width="50" /> [King's Palette](https://matiasandino.github.io/Kings_Palette/)
 </p>
 
 
 King's Palette es una herramienta intuitiva y dinámica para generar **combinaciones de colores atractivas** en segundos. Ideal para diseñadores, desarrolladores o cualquier persona que necesite inspiración visual, permite obtener paletas de colores **a partir de un color específico o de forma completamente aleatoria**.
 
 El objetivo principal de este proyecto es facilitar la exploración de armonías cromáticas útiles, sin necesidad de conocimientos técnicos avanzados sobre teoría del color. Ya sea para una interfaz, una ilustración o una presentación, King's Palette busca combinar la **simplicidad con el impacto visual.**
+
+Puedes acceder a ella haciendo click [aqui](https://matiasandino.github.io/Kings_Palette/)
 
 <img src="https://github.com/user-attachments/assets/c368a42c-c861-4ad1-833c-2a906b521bd6" alt="imagen de la aplicacion numero 1" width="1024"/>
 
