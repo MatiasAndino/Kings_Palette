@@ -11,11 +11,15 @@ King's Palette es una herramienta intuitiva y dinámica para generar **combinaci
 
 El objetivo principal de este proyecto es facilitar la exploración de armonías cromáticas útiles, sin necesidad de conocimientos técnicos avanzados sobre teoría del color. Ya sea para una interfaz, una ilustración o una presentación, King's Palette busca combinar la **simplicidad con el impacto visual.**
 
-<p align="center">
-    <img src="https://github.com/user-attachments/assets/c368a42c-c861-4ad1-833c-2a906b521bd6" alt="imagen de la aplicacion numero 1" width="1024"/>
-    <img src="https://github.com/user-attachments/assets/83496926-5a8a-42f6-be41-885a0064fd66" alt="imagen de la aplicacion numero 2" width="1024"/>
-    <img src="https://github.com/user-attachments/assets/68ba9523-a1b5-457f-8d77-f4b9e7ac375a" alt="imagen de la aplicacion numero 3" width="1024"/>
-</p>
+<img src="https://github.com/user-attachments/assets/c368a42c-c861-4ad1-833c-2a906b521bd6" alt="imagen de la aplicacion numero 1" width="1024"/>
+
+## Paleta Sugerida
+
+<img src="https://github.com/user-attachments/assets/83496926-5a8a-42f6-be41-885a0064fd66" alt="imagen de la aplicacion numero 2" width="1024"/>
+
+## Paleta Personal
+
+<img src="https://github.com/user-attachments/assets/68ba9523-a1b5-457f-8d77-f4b9e7ac375a" alt="imagen de la aplicacion numero 3" width="1024"/>
 
 ---
 
